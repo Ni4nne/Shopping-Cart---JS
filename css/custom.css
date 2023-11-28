@@ -23,8 +23,8 @@ header {
 }
 
 .header img{
-    width: 160px;
-    height: 150px;
+    width: 180px;
+    height: 170px;
 }
 
 .submenu img{
@@ -71,9 +71,9 @@ ul {
     top:100%;
     z-index: 1;
     background-color: white;
-    padding: 20px;
+    padding: 15px;
     min-height: 400px;
-    min-width: 300px;
+    min-width: 400px;
 }
 .vacio {
     padding: 10px;
@@ -110,8 +110,8 @@ ul {
 }
 
 #lista-cursos .row {
-    margin-bottom:10px;
-    margin-left:10px;
+    margin-bottom:15px;
+    margin-left:15px;
 }
 .agregar-carrito {
     margin:10px 0;
