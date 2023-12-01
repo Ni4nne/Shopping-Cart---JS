@@ -7,19 +7,18 @@ let articulosCarrito = [];
 
 cargarEventListeners();
 function cargarEventListeners(){
-    //Agrega un curso al presionar el botón "comprar"
+    //Agrega curso al carrito
     listaCursos.addEventListener('click', agregarCurso);
 
-    //Elimina cursos del carrito
+    //Elimina curso del carrito
     carrito.addEventListener('click', eliminarCurso);
 
-    //Otra función***
-
-
+    //Vacia carrito
+    vaciarCarritoBtn.addEventListener('click', vaciarCarrito);
 
 }
 
-//Funciones
+//Funciones del carrito
 function agregarCurso(e){
     e.preventDefault(); //Evita el desplazamiento hacia arriba de la página cuanda va a buscar el #
     if(e.target.classList.contains('agregar-carrito')){
@@ -42,6 +41,12 @@ function eliminarCurso(e){
     }
 }
 
+function vaciarCarrito(){
+    articulosCarrito =[];//Pone a cero el array
+
+    limpiarHTML();
+}
+
 //Lee y extrae la info del curso seleccionado
 function leerDatosCurso(curso){
 
@@ -57,7 +62,7 @@ function leerDatosCurso(curso){
     //Comprueba si el curso seleccionado ya existe en el carrito
     const existe = articulosCarrito.some(curso=> curso.id === infoCurso.id);
     if(existe){
-        //Si existe el curso, incrementa cantidad
+        //Si existe el curso, incrementa la cantidad
         const cursos = articulosCarrito.map(curso => {
             if(curso.id === infoCurso.id){
                 curso.cantidad++;
@@ -69,7 +74,7 @@ function leerDatosCurso(curso){
         articulosCarrito = [...cursos];
 
     }else{
-        //Si no existe, añade curso
+        //Si no existe, añade el curso
         articulosCarrito = [...articulosCarrito, infoCurso];
     }
 
